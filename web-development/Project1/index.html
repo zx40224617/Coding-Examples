@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yun Chung's Personal Website</title>
+    <meta name="keywords" content="Yun Chung Chang, UC Berkeley, EECS">
+    <meta name="description" content="The website of Yun Chung Chang">
+    <meta name="author" content="Yun Chung Chang">
+    <link rel="stylesheet" href="./style.css" />
+    <script src="script.js" type="text/javascript"></script>
+    <script src="sercer.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+
+
+    <div class="topnav">
+      <a href="./index.html">Home</a>
+      <a href="https://www.instagram.com/zhangyunzhong1000">Instagram</a>
+      <a href="https://www.linkedin.com/in/yun-chung-chang-8b14b8254">Linkedin</a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQs">About</a>
+    </div>
+
+
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#top">Back to the top</a>
+    <a href="#form1">Fill out the Form</a>
+    <a href="#myStory">My Story</a>
+    <a href="#interest">My interested field</a>
+  </div>
+  
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+  </div>
+
+    <h1>Yun Chung Chang</h1>
+    <p id="myStory">
+      I am a student currently major in EECS at
+      <a href="https://en.wikipedia.org/wiki/University_of_California,_Berkeley"
+        >UC Berkeley</a>
+        Before transferring, I was lost with my future. I didn’t really know what I wanted to do after transfer or even after graduating, especially since I was not sure about which college I would attend at the time. Until the last semester, my engineering professor provided me a chance to do some self-research on the topics I was interested in. And I would say it was why I started to get interested in attending graduate school.
+
+As an EECS prospective student, I chose a topic that included both the contents of computer science and electrical engineering. Although it was a relatively easy topic because it was my first time doing research, I really learned about the interesting part of doing research by acquiring a lot of valuable content in my field of study. It was a project about building a robot using both computer science and electrical engineering skills. The most interesting part was actually about the testing of different codes. To make the robot move in the way I want, I need to try various combinations of code; moreover, I need to test the code with correct parameters and inputs, and all of these are like solving puzzles. It is fascinating to keep trying different stuff until I find the correct one, and I can keep doing it for hours. Such an exciting component of doing research is why I am now really interested in attending graduate school. Also, attending graduate school will allow me to research the area I like with many professions that have the same interest as me, especially since UC Berkeley is one of the most prestigious and outstanding research universities in this world. In such an academically enriching environment, I can fully immerse myself in the field I like to study.
+
+	After this blessed and memorable first-time research experience, I am interested in researching robotics and artificial intelligence. I know the topics are too far away from me right now as a transfer student who hasn’t even started his first class at a 4-year college, but these are the areas and topics that I think I can spend my whole life delving into and studying at. Although, in my opinion, I still consider that going into the industry directly after graduation is a good choice, attending graduate school is now the preferable choice for me. It can not just prepare me more for my future career if I decide to get into the industry but also give me more time to dive into my interest area and consider whether to do research for the rest of my life. My current plan is to attend graduate school first after graduation. During graduate school, I can decide whether to continue researching at colleges or get a job. Ideally, doing research for big tech companies will be my career goal since I think it collects both the advantages of companies and research organizations, but of course, it requires a lot of hard work for me to achieve. 
+
+
+
+
+    </p>
+    <h2 id ="interest">My interest of study:</h2>
+    <ul class ="block">
+      <li>Machine Learning</li>
+      <li class="even">Deep Laarning</li>
+      <li>Reinforcement Learning</li>
+      <li class="even">Artificial Intelligence</li>
+      <li>Optimization</li>
+    </ul>
+    <h2>My Hobbies</h2>
+    <ul class="inline">
+      <li>Playing PC games</li>
+      <li id="basketball">Playing Basketball</li>
+      <li>listening to music</li>
+    </ul>
+
+    <h2>
+      If you want to know more about me, <a href="./about.html">here</a> is the
+      link to my resume.
+
+      <h2>Here is a pricture of me:</h2>
+      <img src="./MyPicture.png" alt= "my picture" width="500px" height = "400px">
+
+      <h2>This is my first webpage, please give me some advices:</h2>
+      <form id="form1">
+        <label for="fname">First name:</label><br>
+        <input type="text"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text"><br>
+        <label for="email">Email: </label><br>
+        <input type="text"><br>
+        <label for="Comments and advices">Comments and advices:</label><br>
+        <textarea></textarea><br>
+        <button class = "button" onclick ="submitButton()" type ="button">Submit</button>
+      </form>
+    </body>
+</html>
+

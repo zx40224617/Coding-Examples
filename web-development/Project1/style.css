@@ -1,0 +1,137 @@
+html{
+    background-color:rgb(128,128,128);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2{
+    color:aliceblue
+}
+
+.block>li{
+    display: block;
+    margin: 20px;
+    color: burlywood
+}
+
+.inline>li{
+    display: inline;
+    color: burlywood;
+    margin:20px;
+}
+
+p{
+    text-align: center;
+    border-style: dotted;
+    border-color: black;
+    color:burlywood;
+    background-color:rgb(128,128,128);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-style: dotted;
+    border-color: black;
+    color:burlywood;
+}
+
+img{
+    margin:50px;
+    position:relative;
+    left:100px;
+}
+
+img:hover{
+    transform: scale(2);
+    transition: 2s;
+}
+
+#basketball{
+color:aqua
+}
+
+.even{
+    color:aqua;
+}
+
+/*top navigation*/
+.topnav {
+    position:sticky;
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  button {
+    position:fixed;
+    padding: 10px 20px;
+    font-size: 1.2em;
+  }
+
+/*sidebar*/
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
