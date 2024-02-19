@@ -1,0 +1,25 @@
+.all {
+    display: flex;
+    justify-content: center;
+}
+
+.items {
+    flex: 1;
+    justify-content: center;
+    border: 3px solid #000;
+    text-align: center;
+}
+
+.total {
+    flex: 1;
+    justify-content: center;
+    border: 3px solid #000;
+    text-align: center;
+}
+
+.return {
+    flex: 1;
+    justify-content: center;
+    border: 3px solid #000;
+    text-align: center;
+}

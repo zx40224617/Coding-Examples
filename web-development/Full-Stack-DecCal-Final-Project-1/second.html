@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bill</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Comic Sans MS", "Times New Roman", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #c2dbbf;
+        color: #333;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      input,
+      button {
+        background-color: #8db580;
+        color: #fff;
+        border: none;
+        padding: 8px;
+        margin-top: 8px;
+        cursor: pointer;
+        width: 90%;
+      }
+
+      header {
+        background-color: #8db580;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+
+      footer {
+        background-color: #8db580;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #go-to-bill-button {
+        margin-left: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 8px 16px;
+        border: 2px solid #5b9957; /* Different shade of green */
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #7fc27e;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <header>
+      <h1>🌿 Housemate Bill Spliting 🍃</h1>
+    </header>
+
+    <div class="all">
+      <div class="items">
+        <h2>Items Recap</h2>
+        <ul id="recapList"></ul>
+
+        <h3 id="total"></h3>
+      </div>
+
+      <div class="total">
+        <h2>Calculate Split</h2>
+        <!--
+        <label for="total">Enter Total:</label>
+        <input type="number" id="total" placeholder="Enter Total" />
+        <p></p>
+        -->
+
+        <label for="s1">Split 1:</label>
+        <input type="number" id="s1" placeholder="Enter Split 1" />
+        <p></p>
+
+        <label for="s2">Split 2:</label>
+        <input type="number" id="s2" placeholder="Enter Split 2" />
+        <p></p>
+
+        <button onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="return">
+        <h2>Calculated Bill</h2>
+        <p id="ts1"></p>
+        <p id="ts2"></p>
+      </div>
+
+      <footer>
+        <p>&copy; 2023 Housemate Grocery List</p>
+        <button id="go-to-bill-button" onclick="goToBill()">
+          Back To Home Page
+        </button>
+      </footer>
+
+      <script>
+        alert(
+          "Welcome to the Bill Section! Enter the total as a number and the split as percentages (eg: 0.7, 0.3, etc). Then press calculate!"
+        );
+        var price = localStorage.getItem("price");
+        var recapList = document.getElementById("recapList");
+
+        window.onload = function () {
+          document.getElementById("total").innerHTML =
+            "Your Total Will Be: " + price + "$";
+          var recap = JSON.parse(localStorage.getItem("items"));
+          for (var i = 0; i < recap.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = recap[i];
+            recapList.appendChild(listItem);
+          }
+        };
+
+        function calculate() {
+          //var total = parseFloat(document.getElementById("total").value);
+          var total = price;
+          var s1 = parseFloat(document.getElementById("s1").value);
+          var s2 = parseFloat(document.getElementById("s2").value);
+
+          if (isNaN(s1) || isNaN(s2)) {
+            alert("Please enter valid numbers.");
+            return;
+          }
+
+          var ts1 = s1 * total;
+          var ts2 = s2 * total;
+
+          document.getElementById("ts1").innerText = `Person 1: ${ts1.toFixed(
+            2
+          )}`;
+          document.getElementById("ts2").innerText = `Person 2: ${ts2.toFixed(
+            2
+          )}`;
+        }
+
+        function goToBill() {
+          alert("Redirecting to the home page...");
+          location.href = "Index.html";
+        }
+      </script>
+    </div>
+  </body>
+</html>

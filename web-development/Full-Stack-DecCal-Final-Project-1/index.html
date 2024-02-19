@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Housemate Grocery List</title>
+    <style>
+      body {
+        font-family: "Comic Sans MS", "Times New Roman", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #c2dbbf;
+        color: #333;
+      }
+
+      header {
+        background-color: #8db580;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr repeat(6, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .column {
+        border: 1px solid rgba(125, 184, 134, 0.5);
+        padding: 20px;
+        text-align: center;
+        background-color: #c2dbbf;
+        color: #333;
+        flex-grow: 1;
+      }
+
+      .checklist {
+        text-align: left;
+      }
+
+      input,
+      button {
+        background-color: #8db580;
+        color: #fff;
+        border: none;
+        padding: 8px;
+        margin-top: 8px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      input::placeholder {
+        color: #b5c7a7;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      footer {
+        background-color: #8db580;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #go-to-bill-button,
+      #clear-button {
+        margin-left: 20px;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 8px 16px;
+        border: 2px solid #5b9957; /* Different shade of green */
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #7fc27e;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>🌿 Housemate Grocery List 🍃</h1>
+    </header>
+
+    <div class="container">
+      <div class="column" id="your-items">
+        <h2>🛒 Your Items 🛒</h2>
+        <div class="checklist" id="your-items-checklist">
+          <ul id="your-items-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="veggies">
+        <h2>🥦 Veggies 🌽</h2>
+        <div class="checklist" id="veggies-checklist">
+          <input type="text" id="veggies-input" placeholder="Add item" />
+          <button onclick="addItem('veggies');">Add</button>
+          <ul id="veggies-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="fruits">
+        <h2>🍓 Fruits 🍏</h2>
+        <div class="checklist" id="fruits-checklist">
+          <input type="text" id="fruits-input" placeholder="Add item" />
+          <button onclick="addItem('fruits');">Add</button>
+          <ul id="fruits-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="breakfast">
+        <h2>🍳 Breakfast 🥞</h2>
+        <div class="checklist" id="breakfast-checklist">
+          <input type="text" id="breakfast-input" placeholder="Add item" />
+          <button onclick="addItem('breakfast');">Add</button>
+          <ul id="breakfast-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="lunch">
+        <h2>🍔 Lunch 🍜</h2>
+        <div class="checklist" id="lunch-checklist">
+          <input type="text" id="lunch-input" placeholder="Add item" />
+          <button onclick="addItem('lunch');">Add</button>
+          <ul id="lunch-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="spices">
+        <h2>🌶️ Spices 🧂</h2>
+        <div class="checklist" id="spices-checklist">
+          <input type="text" id="spices-input" placeholder="Add item" />
+          <button onclick="addItem('spices');">Add</button>
+          <ul id="spices-list"></ul>
+        </div>
+      </div>
+
+      <div class="column" id="sauces">
+        <h2>🍅 Sauces 🍝</h2>
+        <div class="checklist" id="sauces-checklist">
+          <input type="text" id="sauces-input" placeholder="Add item" />
+          <button onclick="addItem('sauces');">Add</button>
+          <ul id="sauces-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <button id="clear-button" onclick="clearItems()">Clear Items</button>
+
+    <footer>
+      <p>&copy; 2023 Housemate Grocery List</p>
+      <button id="go-to-bill-button" onclick="goToBill()">Go to Bill</button>
+    </footer>
+
+    <script>
+      var totalPrice = 0;
+      var recap = [];
+
+      window.onload = function () {
+        var yourItemsList = document.getElementById("your-items-list");
+        var recap = JSON.parse(localStorage.getItem("items"));
+        for (var i = 0; i < recap.length; i++) {
+          var listItem = document.createElement("li");
+          listItem.textContent = recap[i];
+          yourItemsList.appendChild(listItem);
+        }
+      };
+
+      function addItem(category) {
+        let price = prompt("What is the price for each item?");
+        let number = prompt("How many do you want for this item?");
+        totalPrice += price * number;
+
+        var inputElement = document.getElementById(category + "-input");
+        var listElement = document.getElementById(category + "-list");
+        var yourItemsList = document.getElementById("your-items-list");
+
+        var listItem = document.createElement("li");
+        listItem.textContent = inputElement.value + " X " + number;
+        recap.push(listItem.textContent);
+        window.localStorage.setItem("items", JSON.stringify(recap));
+
+        listElement.appendChild(listItem);
+        yourItemsList.appendChild(listItem.cloneNode(true));
+
+        inputElement.value = "";
+      }
+
+      function goToBill() {
+        alert("Redirecting to the bill page...");
+        location.href = "Second.html";
+        totalPrice.toFixed(2);
+        window.localStorage.setItem("price", JSON.stringify(totalPrice));
+      }
+
+      function clearItems() {
+        localStorage.clear();
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
