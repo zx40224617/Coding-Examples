@@ -1,0 +1,21 @@
+C001Kona Blend          Starpeet's     03.501450ymHawaii    200
+C002Java Script         Netscape Inc.  02.990425ydMt View   175
+C003Original Java       Sun Micro      00.000680ylPalo Alto 210
+C004Livermore Dark      NIFty          01.250400ydTriValley 195
+T001Tazo Zen            Megacorp Co.   01.650745yg090minty
+T002English Breakfast   National Tea   01.990699yb175strong
+T003Earl Gray           Bad Press      02.251014yb185bergamot
+T004Chamomile           SleepyTime     02.350095yf000floral
+T005Jasmine Green       Biggies        02.150600yg160jasmine
+S001Cookie Cola         Cola Beverages 03.251234ycola      250y
+S002Diet Cookie Cola    Cola Beverages 03.251575ycola      010y
+S003Zero Cola           Warner Cola Co.03.100875ycola      175n
+W001Yosemite Spring     CA Water Co.   02.501012yyy
+W002Cloudy But Cheap    CA Water Co.   00.750013ynn
+W003Altamont Wonder     MegaBev        01.690368ynn
+W004Fall Spring         SpringFall     01.990250yyy
+J001Great Juice!        Kim's Juicery  03.690250yorange    100100n
+J002Great Juice!        Kim's Juicery  03.450350ygrape     200025y
+J003Pomo Blend          Treenuts, Inc. 03.050084ypomogran. 195075y
+J004Juicy Juice Apple   Big Apple Brand04.250123yapple     225050y
+J005CloudyMelon         WhoWantsIt     03.990099ycantaloupe200100n
