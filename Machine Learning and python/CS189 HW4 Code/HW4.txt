@@ -1,0 +1,12 @@
+Name: Yun Chung Chang
+ID: 3039076276
+
+Random seed = 100
+Bascially you can just run from top to bottom without any special indications.
+I didn't delete some of the debugging lines like print(...), please ignore the lines I commented out.
+For 5.2, I have step size = 0.001, regularization parameter = 0.1
+For 5.4, I have step size = 0.01, regularization parameter = 0.1
+For 5.2, I have step size = 0.01, regularization parameter = 0.1, delta = 1
+And for all the w, every starting element is randomly chose between 0 and 1. 
+For Kaggle, I didn't add anything special so no worries. 
+Thank you so much for reading, and hope you have a nice day! 
